@@ -105,7 +105,7 @@ func TestListOperation(t *testing.T) {
 		t.Error(err)
 	}
 	defer file.Close()
-	
+
 	bytes, err := ioutil.ReadAll(file)
 	if err != nil {
 		t.Error(err)
@@ -320,7 +320,7 @@ func TestRemovingOperationMissingID(t *testing.T) {
 	err := Perform(args, &buffer)
 
 	if err == nil {
-		t.Error("Error has to be shown when -id flag is missing")
+		t.Error("ErrorMsg has to be shown when -id flag is missing")
 	}
 
 	if err.Error() != expectedError {
